@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+    <style>
+        a {
+            color: black;
+            text-decoration: none;
+            font-size: 30px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px gray;
+            padding: 5px 10px;
+        }
+
+        nav {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Index</a>
+        <a href="json.html">Json</a>
+        <a href="post.html">Post</a>
+        
+    </nav>
+
+
+
+    <h1>JSON</h1>
+    <h2>Javascript Object Notation</h2>
+    <script>
+        const user = {
+            id: 4,
+            name: "demoName",
+            friend: ['sdjdgsh', 'kgsdkhg', 'kgakdkjsh']
+        };
+        // server e json send korte stringify
+        // server e json receive kore parse
+        const userJSON = JSON.stringify(user);
+        console.log(userJSON);
+        const userFromJSON = JSON.parse(userJSON);
+        console.log(userFromJSON);
+    </script>
+</body>
+
+</html>

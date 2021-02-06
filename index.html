@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Placeholder</title>
+    <style>
+        a {
+            color: black;
+            text-decoration: none;
+            font-size: 30px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px gray;
+            padding: 5px 10px;
+        }
+
+        nav {
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Index</a>
+        <a href="json.html">Json</a>
+        <a href="post.html">Post</a>
+    </nav>
+    <h1>get</h1>
+    <h2>Javascript Object Notation</h2>
+    <ul id="users-container">
+
+    </ul>
+
+
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response => response.json())
+            .then(json => displayUser(json))
+
+        function displayUser(users) {
+            // console.log("user", users);
+            const userNames = users.map(anyName => anyName.username);
+            // console.log(userNames);
+            const ul = document.getElementById('users-container');
+            for (let i = 0; i < userNames.length; i++) {
+                const element = userNames[i];
+                const user = document.createElement('li');
+                user.innerText = element;
+                ul.appendChild(user);
+            }
+        }
+    </script>
+</body>
+
+</html>
